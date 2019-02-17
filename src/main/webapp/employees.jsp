@@ -16,9 +16,41 @@
 <head>
     <title>Employees</title>
 </head>
+<jsp:include page="header.jsp"/>
 <body>
 <h1>Employees page!</h1>
-<span><c:out value="${employeeService.findById(1).getName()}"/></span>
+
+<table border="1" cellpadding="5">
+    <caption><h2>List of users</h2></caption>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Manager</th>
+    </tr>
+    <c:forEach var="employee" items="${employeeService.getAll()}">
+        <tr>
+            <td><c:out value="${employee.getId()}" /></td>
+            <td><c:out value="${employee.getName()}" /></td>
+            <td><c:out value="${employee.getDepartment()}" /></td>
+            <td><c:out value="${employee.getManager()}" /></td>
+        </tr>
+    </c:forEach>
+</table>
+
+<%--&lt;%&ndash;<table align="center" cellpadding="5" cellspacing="5" border="1">&ndash;%&gt;--%>
+    <%--&lt;%&ndash;<tr>&ndash;%&gt;--%>
+
+    <%--&lt;%&ndash;</tr>&ndash;%&gt;--%>
+    <%--&lt;%&ndash;<tr>&ndash;%&gt;--%>
+        <%--&lt;%&ndash;<td><b>id</b></td>&ndash;%&gt;--%>
+        <%--&lt;%&ndash;<td><b>Name</b></td>&ndash;%&gt;--%>
+        <%--&lt;%&ndash;<td><b>Department</b></td>&ndash;%&gt;--%>
+        <%--&lt;%&ndash;<td><b>Manager</b></td>&ndash;%&gt;--%>
+    <%--&lt;%&ndash;</tr>&ndash;%&gt;--%>
+<%--</table>--%>
+<%--&lt;%&ndash;<span><c:out value="${employeeService.getAll()}"/>&ndash;%&gt;--%>
+<%--</span>--%>
 <%--<c:forEach items="${employeeService.findById(1)}" var="employee">--%>
     <%--<span><c:out value="${employee.getName()}"/></span>--%>
 <%--</c:forEach>--%>
