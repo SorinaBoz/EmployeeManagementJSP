@@ -32,7 +32,7 @@
         <tr>
             <td><c:out value="${employee.getId()}" /></td>
             <td><c:out value="${employee.getName()}" /></td>
-            <td><c:out value="${employee.getDepartment()}" /></td>
+            <td><c:out value="${employee.getDepartment().getDepartmentName()}" /></td>
             <td><c:out value="${employee.getManager()}" /></td>
         </tr>
     </c:forEach>

@@ -5,6 +5,9 @@ import javax.persistence.*;
 @Entity
 @Table(name="employees")
 public class Employee {
+    @ManyToOne
+    @JoinColumn(name="department_id", nullable=false)
+    private Department department;
 
     @Id
     @Column(name = "employee_id")
@@ -13,8 +16,7 @@ public class Employee {
 
     @Column(name = "name", length = 40)
     private String name;
-    @Column(name = "department", length = 40)
-    private String department;
+
     @Column(name = "manager", length = 40)
     private String manager;
 
@@ -26,13 +28,6 @@ public class Employee {
         this.id = id;
     }
 
-    public String getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(String department) {
-        this.department = department;
-    }
 
     public String getManager() {
         return manager;
@@ -40,6 +35,14 @@ public class Employee {
 
     public void setManager(String manager) {
         this.manager = manager;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
     }
 
     public String getName() {
@@ -50,13 +53,5 @@ public class Employee {
         this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", department='" + department + '\'' +
-                ", manager='" + manager + '\'' +
-                '}';
-    }
+
 }

@@ -2,6 +2,7 @@ package com.sda;
 
 import com.sda.dao.EmployeeDao;
 import com.sda.dao.UserDao;
+import com.sda.model.Department;
 import com.sda.model.Employee;
 import com.sda.model.User;
 import com.sda.service.EmployeeService;
@@ -20,5 +21,9 @@ public class Main {
 //        employeeDao.createEntity(employee);
         EmployeeService employeeService = new EmployeeService();
         System.out.println(employeeService.getAll().toString());
+
+        Department department = new Department();
+        department.setDepartmentName("HR");
+
     }
 }
