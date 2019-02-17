@@ -15,6 +15,17 @@
 <html>
 <head>
     <title>Employees</title>
+
+    <%--<style type="text/css">--%>
+        <%--table{--%>
+            <%--width:300px;--%>
+            <%--border-collapse:collapse;--%>
+        <%--}--%>
+        <%--td{background:red;border:1px solid #000}--%>
+        <%--td a{display:block;position:relative}--%>
+        <%--td a:hover{background:blue;color:#fff}--%>
+    <%--</style>--%>
+
 </head>
 <jsp:include page="header.jsp"/>
 <body>
@@ -28,15 +39,23 @@
         <th>Department</th>
         <th>Manager</th>
     </tr>
+
     <c:forEach var="employee" items="${employeeService.getAll()}">
         <tr>
             <td><c:out value="${employee.getId()}" /></td>
-            <td><c:out value="${employee.getName()}" /></td>
+            <td>
+                <a href="employees_details.jsp"><c:out value="${employee.getName()}"/></a>
+            </td>
             <td><c:out value="${employee.getDepartment()}" /></td>
             <td><c:out value="${employee.getManager()}" /></td>
         </tr>
     </c:forEach>
 </table>
+
+<%--<script>--%>
+    <%--var Name = employee.getName();--%>
+<%--</script>--%>
+
 
 <%--&lt;%&ndash;<table align="center" cellpadding="5" cellspacing="5" border="1">&ndash;%&gt;--%>
     <%--&lt;%&ndash;<tr>&ndash;%&gt;--%>
