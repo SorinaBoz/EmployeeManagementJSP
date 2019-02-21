@@ -31,7 +31,9 @@
     <c:forEach var="employee" items="${employeeService.getAll()}">
         <tr>
             <td><c:out value="${employee.getId()}" /></td>
-            <td><c:out value="${employee.getName()}" /></td>
+            <td>
+                <a href="employees_details.jsp"><c:out value="${employee.getName()}"/></a>
+            </td>
             <td><c:out value="${employee.getDepartment().getDepartmentName()}" /></td>
             <td><c:out value="${employee.getManager()}" /></td>
         </tr>
