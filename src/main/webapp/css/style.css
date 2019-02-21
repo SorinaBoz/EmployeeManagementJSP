@@ -199,6 +199,16 @@ body, html {
     background-size: cover;
 }
 
-tr:nth-child(even) {
+table.employees_table tr:nth-child(even) {
     background-color: #D3D3D3;
 }
+ th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+ button#add_button  {
+     background-color: #4CAF50;
+     color: white;
+     margin-left:400px;
+     margin-top: 10px;}

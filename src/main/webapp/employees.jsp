@@ -20,13 +20,15 @@
 <body>
 <h1>Employees page!</h1>
 
-<table border="1" cellpadding="5">
+<table id="employees_table" align="center"  border="1" cellpadding="5" style="width:50%">
     <caption><h2>List of users</h2></caption>
     <tr>
         <th>ID</th>
         <th>Name</th>
         <th>Department</th>
         <th>Manager</th>
+        <th>Edit/Delete</th>
+
     </tr>
     <c:forEach var="employee" items="${employeeService.getAll()}">
         <tr>
@@ -36,10 +38,12 @@
             </td>
             <td><c:out value="${employee.getDepartment().getDepartmentName()}" /></td>
             <td><c:out value="${employee.getManager()}" /></td>
+            <td><button onClick="window.location='editData.jsp';">Edit</button>
+                <button onclick="window.location='deleteData.jsp';">Delete</button></td>
         </tr>
     </c:forEach>
 </table>
-
+<button id="add_button" onClick="window.location='addData.jsp';">Add Employee</button>
 <%--&lt;%&ndash;<table align="center" cellpadding="5" cellspacing="5" border="1">&ndash;%&gt;--%>
     <%--&lt;%&ndash;<tr>&ndash;%&gt;--%>
 
