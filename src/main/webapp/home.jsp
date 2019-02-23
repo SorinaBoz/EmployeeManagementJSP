@@ -12,6 +12,7 @@
 <html>
 <head>
     <title>Employees Management</title>
+    <link href="./css/style.css" rel="stylesheet" type="text/css">
 </head>
 <jsp:include page="header.jsp"/>
 
