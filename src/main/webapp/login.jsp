@@ -17,30 +17,25 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1256">
     <title>Login Page</title>
-
-    <link href="../css/style.css" rel="stylesheet" type="text/css">
-
+    <link href="./css/style.css" rel="stylesheet" type="text/css">
     <style>
         body {
-            background-image: url("/images/background.jpg");
+            background-image: url("./images/lights.jpg");
             background-repeat: no-repeat;
         }
     </style>
-
-
 </head>
 
 <body>
 <form action="login" method="post">
 
     <div class="login">
-        <input type="text" placeholder="Username" name="un"/><br>
+        <input type="text" placeholder="user name" name="un"><br>
         <input type="password" placeholder="password" name="pw"/>
         <input type="submit" value="Sign In">
     </div>
     <div class="shadow"></div>
 
 </form>
-
 </body>
 </html>

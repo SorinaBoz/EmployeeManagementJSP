@@ -9,13 +9,13 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="../css/loginstyle.css" rel="stylesheet" type="text/css">
-    <link href="../css/style.css" rel="stylesheet" type="text/css">
+    <link href="./css/loginstyle.css" rel="stylesheet" type="text/css">
+    <link href="./css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
 <div class="header">
-    <a href="#default" class="logo"><img src="/images/logo.png"/></a>
+    <a href="#default" class="logo"><img src="./images/logo.png"/></a>
     <center>
         <% User currentUser = (User) session.getAttribute("currentSessionUser");%>
         Welcome <%= currentUser.getUsername() %>
@@ -23,7 +23,7 @@
     <div class="header-right">
         <a class="active" href="#home">Home</a>
         <a href="employees.jsp">Employees</a>
-        <a href="#departments">Departments</a>
+        <a href="departments.jsp">Departments</a>
         <a href="#contact">Contact</a>
         <a href="#about">About</a>
     </div>
