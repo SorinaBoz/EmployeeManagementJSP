@@ -17,8 +17,9 @@ public class Employee {
     @Column(name = "name", length = 40)
     private String name;
 
-    @Column(name = "manager", length = 40)
-    private String manager;
+    @ManyToOne(cascade={CascadeType.MERGE})
+    @JoinColumn(name="manager_id")
+    private Employee manager;
 
     public Long getId() {
         return id;
@@ -29,11 +30,11 @@ public class Employee {
     }
 
 
-    public String getManager() {
+    public Employee getManager() {
         return manager;
     }
 
-    public void setManager(String manager) {
+    public void setManager(Employee manager) {
         this.manager = manager;
     }
 

@@ -35,12 +35,14 @@
             <td><c:out value="${employee.getId()}" /></td>
             <td onclick="myFunction(this)"> <c:out value = "${employee.getName()}"/></td>
             <td><c:out value="${employee.getDepartment().getDepartmentName()}" /></td>
-            <td><c:out value="${employee.getManager()}" /></td>
+            <td><c:out value="${employee.getName()}" /></td>
             <td><button onClick="window.location='editData.jsp';">Edit</button>
                 <button onclick="window.location='deleteData.jsp';">Delete</button></td>
         </tr>
     </c:forEach>
 </table>
+
+<button id="add_button" onClick="window.location='addEmployee.jsp';">Add Employee</button>
 <script>
     function myFunction(x) {
         var table = document.getElementById('employees_table');
@@ -52,7 +54,7 @@
         }
     }
 </script>
-<button id="add_button" onClick="window.location='addData.jsp';">Add Employee</button>
+
 <%--&lt;%&ndash;<table align="center" cellpadding="5" cellspacing="5" border="1">&ndash;%&gt;--%>
     <%--&lt;%&ndash;<tr>&ndash;%&gt;--%>
 
