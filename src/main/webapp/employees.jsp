@@ -33,9 +33,7 @@
     <c:forEach var="employee" items="${employeeService.getAll()}">
         <tr>
             <td><c:out value="${employee.getId()}" /></td>
-            <td>
-                <a href="employees_details.jsp"><c:out value="${employee.getName()}"/></a>
-            </td>
+            <td onclick="myFunction(this)"> <c:out value = "${employee.getName()}"/></td>
             <td><c:out value="${employee.getDepartment().getDepartmentName()}" /></td>
             <td><c:out value="${employee.getManager()}" /></td>
             <td><button onClick="window.location='editData.jsp';">Edit</button>
@@ -43,6 +41,17 @@
         </tr>
     </c:forEach>
 </table>
+<script>
+    function myFunction(x) {
+        var table = document.getElementById('employees_table');
+        for(var i = 1; i < table.rows.length; i++) {
+            table.rows[i].onclick = function() {
+                var id_employee = this.cells[0].innerHTML;
+                location.href="employees_details.jsp?value=" + id_employee;
+            };
+        }
+    }
+</script>
 <button id="add_button" onClick="window.location='addData.jsp';">Add Employee</button>
 <%--&lt;%&ndash;<table align="center" cellpadding="5" cellspacing="5" border="1">&ndash;%&gt;--%>
     <%--&lt;%&ndash;<tr>&ndash;%&gt;--%>
